@@ -21,11 +21,11 @@ jobs:
     - name: vendor stuff
       run: cd ./oniux && cargo vendor
 
-    - name: Archive .zip
+    - name: Archive
       run: |
         tar cfvz oniux.tar.gz ./oniux
 
-    - name: Upload Archive imperator
+    - name: Upload
       uses: actions/upload-artifact@v4
       with:
         name: archives-oniux
