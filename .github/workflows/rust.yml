@@ -19,7 +19,4 @@ jobs:
       run: git clone https://gitlab.torproject.org/tpo/core/oniux.git
 
     - name: Go there
-      run: cd oniux
-    
-    - name: list it
-      run: ls
+      run: cd oniux && ls
