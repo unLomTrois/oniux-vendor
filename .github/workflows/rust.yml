@@ -20,3 +20,14 @@ jobs:
 
     - name: vendor stuff
       run: cd ./oniux && cargo vendor
+
+    - name: Archive .zip
+      run: |
+        tar cfvz oniux.tar.gz ./oniux
+
+    - name: Upload Archive imperator
+      uses: actions/upload-artifact@v4
+      with:
+        name: archives-oniux
+        path: oniux.tar.gz
+        if-no-files-found: error
