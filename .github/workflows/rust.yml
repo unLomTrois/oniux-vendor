@@ -16,18 +16,14 @@ jobs:
 
     steps:
     - name: Clone oniux
-      run: git clone https://gitlab.torproject.org/tpo/core/oniux.git
+      run: git clone --depth 1 --branch v0.6.0 https://gitlab.torproject.org/tpo/core/oniux.git
 
     - name: vendor stuff
       run: cd ./oniux && cargo vendor
-
-    - name: Archive
-      run: |
-        tar cfvz oniux.tar.gz ./oniux
 
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
         name: archives-oniux
-        path: oniux.tar.gz
+        path: ./oniux
         if-no-files-found: error
