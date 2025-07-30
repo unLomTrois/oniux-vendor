@@ -18,9 +18,5 @@ jobs:
     - name: Clone oniux
       run: git clone https://gitlab.torproject.org/tpo/core/oniux.git
 
-    - name: setup dir
-      working-directory: ./oniux
-      run: ls
-      
-    - name: ls
-      run: ls
+    - name: vendor stuff
+      run: cd ./oniux && cargo vendor
