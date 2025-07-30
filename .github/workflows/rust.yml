@@ -20,6 +20,7 @@ jobs:
 
     - name: setup it as working directory
       working-directory: oniux
+      run: cd oniux
       
     - name: ls
       run: ls
